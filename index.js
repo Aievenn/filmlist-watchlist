@@ -44,7 +44,7 @@ async function movieSearch() {
   const query = searchInput.value.trim();
   searchInput.value = ''; // Clear input
   if (!query) return;
-  const url = `http://www.omdbapi.com/?apikey=e265180&s=${query}`;
+  const url = `https://www.omdbapi.com/?apikey=e265180&s=${query}`;
   await renderMovies(url);
 }
 
@@ -74,7 +74,7 @@ async function renderMovies(apiUrl, isTopRated = false) {
     const movies = isTopRated
       ? await Promise.all(
           data.map((movie) =>
-            fetch(`http://www.omdbapi.com/?apikey=e265180&i=${movie.id}`).then(
+            fetch(`https://www.omdbapi.com/?apikey=e265180&i=${movie.id}`).then(
               (res) => res.json()
             )
           )
