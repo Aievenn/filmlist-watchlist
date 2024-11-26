@@ -1,0 +1,524 @@
+@font-face {
+  font-family: nunito;
+  src: url(/font/Nunito-VariableFont_wght.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'nunito', sans-serif;
+}
+
+html {
+  min-height: 100%;
+  max-width: 100%;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#102830",endColorstr="#102342",GradientType=1);
+  margin: 0;
+  height: 100%;
+}
+
+navbar {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background: hsla(218, 60%, 8%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    0deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    0deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#081120", endColorstr="#183233", GradientType=1 );
+}
+
+navbar a {
+  text-decoration: none;
+  color: #a6c0ca;
+}
+
+navbar img {
+  height: 3rem;
+}
+
+#nav-menu {
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+#nav-active {
+  color: #5aacb1;
+}
+
+navbar ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+navbar li {
+  color: #a6c0ca;
+  font-weight: 800;
+  margin: 0;
+  padding: 0.7rem 0;
+  width: 100%;
+}
+
+.theme-switch {
+  position: absolute;
+  height: 34px;
+  top: 5px;
+  right: 10px;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #465b5b;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: orange;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#nav-search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#nav-search input {
+  width: 70%;
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+  padding-left: 1rem;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  color: white;
+}
+
+#nav-search button {
+  color: #a6c0ca;
+
+  border-radius: 1rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#nav-search input,
+#nav-search button {
+  height: 100%;
+  border: none;
+  background-color: #465b5b;
+  font-family: 'nunito', sans-serif;
+}
+
+.spinner {
+  position: fixed;
+  left: 27%;
+  top: 50%;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #a6c0ca;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#movie-search-area {
+  display: grid;
+  min-height: 100vh;
+  margin-top: 3rem;
+  margin-bottom: 13rem;
+}
+.movie-element {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  border-radius: 0.3rem;
+  height: 30rem;
+  width: 20rem;
+  color: #a6c0ca;
+  overflow: clip;
+}
+
+.movie-text {
+  padding: 1rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(57, 98, 104);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(57, 98, 104, 1) 56%,
+    rgba(16, 35, 66, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(57, 98, 104, 1) 56%,
+    rgba(16, 35, 66, 0) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(57, 98, 104, 1) 56%,
+    rgba(16, 35, 66, 0) 100%
+  );
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#396268",endColorstr="#102342",GradientType=1);
+}
+
+.movie-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+  height: 15rem;
+  bottom: 0;
+}
+
+.movie-title {
+  display: flex;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 2rem;
+
+  margin: 0;
+}
+.movie-poster {
+  height: 100%;
+  width: 90%;
+}
+.movie-poster > img {
+  object-fit: cover;
+}
+
+.series-year {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.movie-buttons {
+  background-color: #183233;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  height: 3rem;
+}
+
+.movie-buttons a {
+  text-decoration: none;
+}
+
+.watchlist-add {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.imdb-visit {
+  background: rgba(230, 228, 228, 0.1);
+  color: #d9d9d9;
+}
+
+.watchlist-add,
+.imdb-visit {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.6rem;
+}
+
+#footer {
+  position: absolute;
+
+  margin: 0;
+  border: 2px solid transparent;
+  min-width: 100%;
+  color: #d9d9d9;
+
+  background: linear-gradient(
+    -90deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    -90deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    180deg,
+    hsla(218, 60%, 8%, 1) 0%,
+    hsla(182, 36%, 15%, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#102830",endColorstr="#102342",GradientType=1);
+}
+
+#footer small {
+  padding-left: 3rem;
+}
+
+@media (width >= 768px) and (width< 1440px) {
+  .spinner {
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #movie-search-area {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  navbar {
+    flex-direction: row;
+  }
+
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+    margin-left: 1rem;
+  }
+
+  #nav-search input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    padding-left: 0.3rem;
+    margin: 0.2rem 1rem;
+  }
+
+  #nav-search button {
+    font-size: 0.1rem;
+    height: 3rem;
+  }
+}
+
+@media (width >= 1024px) and (width< 1440px) {
+  #movie-search-area {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width >= 1440px) {
+  /* custom scroll */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #102342;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #a6c0ca;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #081120;
+  }
+
+  .spinner {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  navbar {
+    flex-direction: row;
+  }
+
+  navbar ul {
+    flex-direction: row;
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  navbar a:hover,
+  #nav-active:hover {
+    color: #b7dadd;
+  }
+
+  #nav-search {
+    width: 50%;
+  }
+
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+
+  #movie-search-area {
+    margin: 0 3rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    padding: 1rem;
+  }
+
+  .movie-element {
+    position: relative;
+    padding: 0;
+    height: 30rem;
+    width: 20rem;
+    overflow: clip;
+  }
+
+  .movie-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 13rem;
+    bottom: 3rem;
+  }
+
+  .movie-buttons {
+    background-color: #183233;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .movie-element:hover {
+    animation: movieHover 0.5s forwards;
+  }
+
+  @keyframes movieHover {
+    0% {
+      scale: 1;
+    }
+    100% {
+      scale: 1.03;
+    }
+  }
+
+  .movie-poster {
+    height: 100%;
+    width: 100%;
+  }
+  .movie-poster > img {
+    object-fit: cover;
+  }
+
+  .movie-title {
+    min-height: 6rem;
+    padding-top: 3rem;
+    color: white;
+  }
+
+  .movie-buttons {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+  }
+}
